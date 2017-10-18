@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LoginController@index');
+
+Route::get('/Login', 'LoginController@loginUsuario');
+
+Route::get('Login/password', 'UsuarioController@solicitarPassword');
+
+Route::get('/Autentificar/midasToken/{token}', 'LoginController@autentificarTokenMidas');
+
+Route::get('/Home/index', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {

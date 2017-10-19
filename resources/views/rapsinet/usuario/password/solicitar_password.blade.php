@@ -6,7 +6,7 @@
             <input type="email" class="form-control" name="email_usuario" id="email_usuario" />
         </div>
 
-        <div class="form-group text-right">
+        <div class="text-right">
             <button type="button" class="btn btn-success btn-flat" onclick="Login.nuevaPassword(this.form, this);">Solicitar</button>
         </div>
     </form>

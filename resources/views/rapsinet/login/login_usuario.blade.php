@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="form-group text-right">
-                        <a href="{{ url('Login') }}" class="btn btn-flat btn-primary">Entrar</a>
+                        <button type="button" class="btn btn-flat btn-primary" onclick="Login.validarLogin(this.form, this);" >Entrar</button>
                     </div>
                 </form>
 

@@ -13,19 +13,16 @@
 
 Route::get('/', 'LoginController@index');
 
-Route::get('/Login', 'LoginController@loginUsuario');
-
+Route::post('Login/validar', 'LoginController@loginUsuario');
 Route::get('Login/password', 'UsuarioController@solicitarPassword');
+Route::get('Login/cerrar', 'LoginController@logoutUsuario');
 
 Route::get('/Autentificar/midasToken/{token}', 'LoginController@autentificarTokenMidas');
 
 Route::get('/Home/index', 'HomeController@index');
 
-Route::group(['middleware' => 'auth'], function () {
-    //    Route::get('/link1', function ()    {
-//        // Uses Auth Middleware
-//    });
 
-    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
-    #adminlte_routes
-});
+
+/** rutas modulo Usuario */
+Route::get('/Usuario/misDatos/{usuario}', 'UsuarioController@misDatos');
+Route::post('/Usuario/guardarMisDatos', 'UsuarioController@guardar');

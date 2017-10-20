@@ -120,7 +120,7 @@
                         <!-- The user image in the menu -->
                         <li class="user-header" style="height: auto !important; font-weight: bold">
                             <p>
-                                {{ Session::get('perfil') }}
+                                {{ Session::get('perfil_nombre') }}
                                 <small>Último ingreso : {{ Session::get('ultimo_ingreso') }}</small>
                             </p>
                         </li>

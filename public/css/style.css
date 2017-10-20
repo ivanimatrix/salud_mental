@@ -2,3 +2,12 @@
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
 }
+
+.sidebar-menu .treeview-menu > li > a {
+    font-size: 12px;
+    white-space: normal;
+}
+
+.main-header .logo{
+    font-family: 'Open Sans' !important;
+}

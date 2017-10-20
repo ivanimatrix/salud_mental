@@ -31,15 +31,21 @@ class LoginController extends Controller
             $json['redirect'] = 'Home/index';
             $dataUsuario = $usuario->find($user->id_usuario_sistema);
 
-            $perfil = \App\Perfiles::find($user->cd_perfil_fk_usuario_sistema)->first();
+            $perfil = \App\Perfiles::find($user->cd_perfil_fk_usuario_sistema);
+
+            $funciones = $perfil->funciones;
+
 
             $request->session()->put('id', $user->id_usuario_sistema);
             $request->session()->put('nombre', $dataUsuario->gl_nombres_usuario);
             $request->session()->put('apellido_paterno', $dataUsuario->gl_apellido_paterno_usuario);
             $request->session()->put('apellido_materno', $dataUsuario->gl_apellido_materno_usuario);
             $request->session()->put('email', $user->gl_email_usuario_sistema);
-            $request->session()->put('perfil', $perfil->gl_nombre_perfil);
+            $request->session()->put('perfil', $user->cd_perfil_fk_usuario_sistema);
+            $request->session()->put('perfil_nombre', $perfil->gl_nombre_perfil);
             $request->session()->put('ultimo_ingreso', $user->fc_ultimo_login_usuario_sistema);
+            $request->session()->put('funciones', $funciones);
+
         }else{
             $json['estado'] = false;
             $json['mensaje'] = 'Credenciales no correctas. Intente nuevamente';

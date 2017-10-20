@@ -32,7 +32,7 @@ class UsuariosSistema extends Model
 
 
     public function perfiles(){
-
+        return $this->belongsToMany('App\Perfiles');
     }
 
 }

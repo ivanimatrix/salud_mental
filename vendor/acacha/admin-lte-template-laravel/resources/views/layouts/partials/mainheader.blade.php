@@ -128,7 +128,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="{{ url('/user/profile') }}" class="btn btn-default btn-flat"> Mi Cuenta </a>
+                                <a href="{{ url('/Usuario/misDatos/') }}" class="btn btn-default btn-flat"> Mi Cuenta </a>
                             </div>
                             <div class="pull-right">
                                 <a href="{{ url('Login/cerrar') }}" class="btn btn-default btn-flat" id="logout" title="CERRAR SESIÓN">

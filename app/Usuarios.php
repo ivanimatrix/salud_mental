@@ -11,6 +11,8 @@ class Usuarios extends Model
 
     protected $primaryKey = 'id_usuario';
 
+    public $timestamps = false;
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

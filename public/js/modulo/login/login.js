@@ -22,7 +22,7 @@ var Login = {
       });
     }else{
       $.ajax({
-        url : url_base + 'Login/validar',
+        url : url_base + '/Login/validar',
         data : $(form).serializeArray(),
         type : 'post',
         dataType : 'json',
@@ -49,7 +49,7 @@ var Login = {
    * solicitar nueva contraseña
    */
   solicitarPassword : function(){
-    BootModal.open(url_base + 'Login/password', 'Solicitar nueva contraseña');
+    BootModal.open(url_base + '/Login/password', 'Solicitar nueva contraseña');
   },
 
   /**

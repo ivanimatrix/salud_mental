@@ -13,9 +13,9 @@
 
 Route::get('/', 'LoginController@index');
 
-Route::post('Login/validar', 'LoginController@loginUsuario');
-Route::get('Login/password', 'UsuarioController@solicitarPassword');
-Route::get('Login/cerrar', 'LoginController@logoutUsuario');
+Route::post('/Login/validar', 'LoginController@loginUsuario');
+Route::get('/Login/password', 'UsuarioController@solicitarPassword');
+Route::get('/Login/cerrar', 'LoginController@logoutUsuario');
 
 Route::get('/Autentificar/midasToken/{token}', 'LoginController@autentificarTokenMidas');
 
@@ -24,5 +24,6 @@ Route::get('/Home/index', 'HomeController@index');
 
 
 /** rutas modulo Usuario */
-Route::get('/Usuario/misDatos/{usuario}', 'UsuarioController@misDatos');
+Route::get('/Usuario/misDatos', 'UsuarioController@misDatos');
 Route::post('/Usuario/guardarMisDatos', 'UsuarioController@guardar');
+Route::post('/Usuario/cambiarPassword', 'UsuarioController@actualizarPassword');

@@ -11,6 +11,8 @@ class UsuariosSistema extends Model
 
     protected $primaryKey = 'id_usuario_sistema';
 
+    public $timestamps = false;
+
     /**
      * Obtener informacion de usuario de sistema por ID
      * @param $id

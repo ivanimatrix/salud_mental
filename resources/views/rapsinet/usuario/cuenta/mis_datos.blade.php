@@ -137,7 +137,7 @@
                             <td class="text-left">
                                 @if ($usuario->usuario_sistema->establecimientos)
                                     @foreach($usuario->usuario_sistema->establecimientos as $establecimiento)
-                                    {{ mb_strtoupper($establecimiento->gl_nombre_establecimiento) }} (comuna de {{ $establecimiento->comuna->gl_nombre_comuna }})<br/>
+                                        <label class="label label-primary">{{ mb_strtoupper($establecimiento->gl_nombre_establecimiento) }} (comuna de {{ $establecimiento->comuna->gl_nombre_comuna }})</label><br/>
                                     @endforeach
                                 @endif
                             </td>
@@ -153,5 +153,5 @@
 @endsection
 
 @section('js-code')
-    <script type="text/javascript" src="{{ url ('public/js/modulo/usuarios/usuarios.js') }}" ></script>
+    <script type="text/javascript" src="{{ url ('public/js/modulo/usuarios/usuarios.js?' .uniqid()) }}" ></script>
 @endsection

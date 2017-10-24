@@ -83,4 +83,28 @@ class UsuarioController extends Controller
 
     }
 
+
+    public function cambiarPerfilUsuario(Request $request){
+        $perfil = $request->get('perfil');
+
+        $usuario = UsuariosSistema::find(session()->get('id'));
+
+        $json = array();
+        $perfil_usuario = $usuario->perfiles->where('id_perfil', $perfil)->first();
+        if($perfil_usuario){
+            $json['correcto'] = true;
+            $json['redirect'] = '/Home/index';
+            session()->put('perfil_nombre',$perfil_usuario->gl_nombre_perfil);
+            session()->put('perfil', $perfil);
+        }else{
+            $json['correcto'] = false;
+            $json['mensaje'] = 'El perfil seleccionado no se encuentra asociado a su cuenta';
+        }
+
+        return response()->json($json);
+
+
+
+    }
+
 }

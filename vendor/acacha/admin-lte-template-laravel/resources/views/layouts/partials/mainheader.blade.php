@@ -123,6 +123,14 @@
                                 {{ Session::get('perfil_nombre') }}
                                 <small>Último ingreso : {{ Session::get('ultimo_ingreso') }}</small>
                             </p>
+                            @if(count(Session::get('perfiles')) > 1)
+                                <select class="form-control" id="cargar_perfil" name="cargar_perfil">
+                                    <option value="">Seleccione perfil...</option>
+                                    @foreach(Session::get('perfiles') as $perfil)
+                                    <option value="{{ $perfil->id_perfil }}">{{ $perfil->gl_nombre_perfil }}</option>
+                                    @endforeach
+                                </select>
+                            @endif
                         </li>
 
                         <!-- Menu Footer-->

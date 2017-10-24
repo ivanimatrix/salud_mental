@@ -27,3 +27,4 @@ Route::get('/Home/index', 'HomeController@index');
 Route::get('/Usuario/misDatos', 'UsuarioController@misDatos');
 Route::post('/Usuario/guardarMisDatos', 'UsuarioController@guardarDatos');
 Route::post('/Usuario/cambiarPassword', 'UsuarioController@actualizarPassword');
+Route::post('/Usuario/cambiarPerfil', 'UsuarioController@cambiarPerfilUsuario');

@@ -47,6 +47,7 @@ class LoginController extends Controller
             $request->session()->put('perfil_nombre', $perfil->gl_nombre_perfil);
             $request->session()->put('ultimo_ingreso', $usuario->usuario_sistema->fc_ultimo_login_usuario_sistema);
             $request->session()->put('funciones', $funciones);
+            $request->session()->put('perfiles', $usuario->usuario_sistema->perfiles);
 
         }else{
             $json['estado'] = false;

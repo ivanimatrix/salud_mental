@@ -3,7 +3,33 @@
 var Usuarios = {
 
 	guardarMisDatos : function(form, btn){
+		var btnText = $(btn).prop('disabled', true).html();
+		$(btn).html('Actualizando... <i class="fa fa-spin fa-spinner"></i>');
 
+		var error = "";
+		if(error !== ""){
+
+		}else{
+			$.ajax({
+				url : url_base + '/Usuario/guardarMisDatos',
+				data : $(form).serializeArray(),
+				type : 'post',
+				dataType : 'json',
+				success : function(response){
+					if(response.correcto){
+						BootModal.success(response.mensaje);
+					}else{
+						BootModal.danger(response.mensaje);
+					}
+					$(btn).prop('disabled', false).html(btnText);
+				},
+				error : function(){
+					BootModal.danger('Error interno. Intente nuevamente o cominíquese con Mesa de Ayuda', function(){
+						$(btn).prop('disabled', false).html(btnText);
+					});
+				}
+			});
+		}
 	},
 
 

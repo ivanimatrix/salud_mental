@@ -16,8 +16,8 @@ class Usuarios extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function usuarioSistema(){
-        return $this->hasOne('App\UsuariosSistema','id_usuario_sistema','id_usuario')->get();
+    public function usuario_sistema(){
+        return $this->hasOne('App\UsuariosSistema','id_usuario_sistema','id_usuario');
     }
 
 

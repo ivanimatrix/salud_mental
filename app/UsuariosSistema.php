@@ -18,8 +18,9 @@ class UsuariosSistema extends Model
      * @param $id
      * @return \Illuminate\Database\Eloquent\Collection|mixed
      */
-    public function infoUsuario($id){
-        return $this->belongsTo('App\Usuarios')->find($id);
+    public function usuario(){
+        return $this->belongsTo('App\Usuarios', 'id_usuario_sistema', 'id_usuario');
+        //return $this->hasOne('App\Usuarios','id_usuario','id_usuario_sistema');
     }
 
     /**
@@ -29,7 +30,8 @@ class UsuariosSistema extends Model
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function validarLogin($id, $pass){
-        return self::where(array('gl_password_usuario_sistema' => $pass, 'id_usuario_sistema' => $id))->get()->first();
+        return self::with('usuario')->where(array('gl_password_usuario_sistema' => $pass, 'gl_rut_usuario' => $id))->get()->first();
+        //return $this->hasOne('App\Usuarios','id_usuario','id_usuario_sistema')->where(array('gl_pass_usuario_sistema' => $pass, 'gl_rut_usuario' => $id))->get()->first();
     }
 
 

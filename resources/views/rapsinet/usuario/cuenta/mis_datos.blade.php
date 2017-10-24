@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Repita la contraseña</label>
-                                    <input type="password" name="repetir_pass" id="repetir_pass" clasS="form-control" />
+                                    <input type="password" name="repetir_pass" id="repetir_pass" class="form-control" />
                                 </div>
                                 <div class="text-right">
                                     <button type="button" class="btn btn-success btn-flat" onclick="Usuarios.cambiarPassword(this.form, this)">Actualizar</button>
@@ -109,7 +109,46 @@
                 <div class="box-footer"></div>
             </div>
 
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <div class="box-title">Otros datos</div>
+                </div>
+                <div class="box-body">
+                    <table class="table table-striped table-bordered">
+                        <tbody>
+                        <tr>
+                            <td class="text-center">Región</td>
+                            <td class="text-left">
+                                <label class="label label-primary">{{ $usuario->usuario_sistema->region->gl_nombre_region }}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Perfiles</td>
+                            <td class="text-left">
+                                @if ($usuario->usuario_sistema->perfiles)
+                                    @foreach($usuario->usuario_sistema->perfiles as $perfil)
+                                        <label class="label label-primary">{{ mb_strtoupper($perfil->gl_nombre_perfil) }}</label>
+                                    @endforeach
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">Establecimientos</td>
+                            <td class="text-left">
+                                @if ($usuario->usuario_sistema->establecimientos)
+                                    @foreach($usuario->usuario_sistema->establecimientos as $establecimiento)
+                                    {{ mb_strtoupper($establecimiento->gl_nombre_establecimiento) }} (comuna de {{ $establecimiento->comuna->gl_nombre_comuna }})<br/>
+                                    @endforeach
+                                @endif
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box-footer"></div>
+            </div>
         </div>
+
     </div>
 @endsection
 

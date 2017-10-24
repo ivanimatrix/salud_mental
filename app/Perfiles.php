@@ -14,7 +14,7 @@ class Perfiles extends Model
 
 
     public function usuarios(){
-        return $this->belongsToMany('App\UsuariosSistema');
+        return $this->belongsToMany('App\UsuariosSistema','rap_perfiles_usuarios','id_perfil_fk','id_usuario_fk');
     }
 
 

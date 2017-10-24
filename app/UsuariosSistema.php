@@ -23,20 +23,23 @@ class UsuariosSistema extends Model
         //return $this->hasOne('App\Usuarios','id_usuario','id_usuario_sistema');
     }
 
-    /**
-     * Validar login de usuario sistema
-     * @param $id
-     * @param $pass
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function validarLogin($id, $pass){
-        return self::with('usuario')->where(array('gl_password_usuario_sistema' => $pass, 'gl_rut_usuario' => $id))->get()->first();
-        //return $this->hasOne('App\Usuarios','id_usuario','id_usuario_sistema')->where(array('gl_pass_usuario_sistema' => $pass, 'gl_rut_usuario' => $id))->get()->first();
+
+    public function perfiles(){
+        return $this->belongsToMany('App\Perfiles','rap_perfiles_usuarios','id_usuario_fk','id_perfil_fk');
     }
 
 
-    public function perfiles(){
-        return $this->belongsToMany('App\Perfiles');
+    /**
+     * Obtener region de usuario de sistema
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function region(){
+        return $this->hasOne('App\Regiones','id_region', 'cd_region_fk_usuario_sistema');
+    }
+
+
+    public function establecimientos(){
+        return $this->belongsToMany('App\Establecimientos','rap_establecimientos_usuario','cd_usuario_fk_eu','cd_establecimiento_fk_eu');
     }
 
 }

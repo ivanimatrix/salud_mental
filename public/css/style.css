@@ -11,3 +11,11 @@
 .main-header .logo{
     font-family: 'Open Sans' !important;
 }
+
+.modal.modal-extra-wide .modal-dialog {
+  	width: 90%;
+}
+
+.modal-wide .modal-body {
+  	overflow-y: auto;
+}

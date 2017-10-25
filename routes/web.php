@@ -28,3 +28,7 @@ Route::get('/Usuario/misDatos', 'UsuarioController@misDatos');
 Route::post('/Usuario/guardarMisDatos', 'UsuarioController@guardarDatos');
 Route::post('/Usuario/cambiarPassword', 'UsuarioController@actualizarPassword');
 Route::post('/Usuario/cambiarPerfil', 'UsuarioController@cambiarPerfilUsuario');
+
+/** rutas mantenedores */
+Route::get('/MantenedorUsuarios/index', 'MantenedorUsuarios@index');
+Route::post('/MantenedorUsuarios/listado', 'MantenedorUsuarios@grillaUsuarios');

@@ -11,3 +11,7 @@
 .main-header .logo{
     font-family: 'Open Sans' !important;
 }
+
+.modal.modal-wide .modal-dialog {
+  	width: 90%;
+}

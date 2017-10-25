@@ -19,11 +19,11 @@
                     <div class="box-title">Listado de Usuarios</div>
                 </div>
                 <div class="box-body">
-                    <div class="col-xs-12">
-                        <div class="table-responsive" id="contenedor-grilla-usuarios">
+
+                        <div class="table-responsive col-xs-12" id="contenedor-grilla-usuarios">
 
                         </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -31,5 +31,9 @@
 @endsection
 
 @section('js-code')
+    <script type="text/javascript" src="{{ url ('public/js/plugins/dTables.js?' .uniqid()) }}" ></script>
     <script type="text/javascript" src="{{ url ('public/js/modulo/mantenedores/usuarios/usuarios.js?' .uniqid()) }}" ></script>
+    <script type="text/javascript">
+        Usuarios.cargarGrillaUsuarios();
+    </script>
 @endsection

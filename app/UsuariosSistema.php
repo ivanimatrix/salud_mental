@@ -14,16 +14,18 @@ class UsuariosSistema extends Model
     public $timestamps = false;
 
     /**
-     * Obtener informacion de usuario de sistema por ID
-     * @param $id
-     * @return \Illuminate\Database\Eloquent\Collection|mixed
+     * Obtener datos de usuario sistema
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function usuario(){
+        //return $this->hasOne('App\Usuarios', 'id_usuario', 'id_usuario_sistema');
         return $this->belongsTo('App\Usuarios', 'id_usuario_sistema', 'id_usuario');
-        //return $this->hasOne('App\Usuarios','id_usuario','id_usuario_sistema');
     }
 
-
+    /**
+     * Obtener perfiles de usuario de sistema
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function perfiles(){
         return $this->belongsToMany('App\Perfiles','rap_perfiles_usuarios','id_usuario_fk','id_perfil_fk');
     }

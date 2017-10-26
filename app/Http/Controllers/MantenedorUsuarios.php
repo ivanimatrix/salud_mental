@@ -17,7 +17,7 @@ class MantenedorUsuarios extends Controller
 
         $usuarios = UsuariosSistema::with('usuario')->get();
 
-        return view('rapsinet.mantenedores.usuarios.grilla', compact('usuarios'));
+        return view('rapsinet.mantenedores.usuarios.grilla', ['usuarios' => $usuarios]);
 
     }
 

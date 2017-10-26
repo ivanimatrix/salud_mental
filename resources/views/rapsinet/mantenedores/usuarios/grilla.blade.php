@@ -1,4 +1,4 @@
-<table class="table-bordered table-striped table-condensed" id="grilla-usuarios" data-export="1">
+<table class="table-bordered table-striped table-condensed" id="grilla-usuarios" data-export="1" width="100%">
     <thead>
     <tr>
         <td>RUN</td>

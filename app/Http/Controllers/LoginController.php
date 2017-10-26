@@ -29,25 +29,25 @@ class LoginController extends Controller
         $usuario = $usuarios->where('gl_rut_usuario', mb_strtolower($rut))->first();
         $json = array();
         //$user = $usuario->validarLogin(mb_strtolower($rut),$pass);
-        if($usuario->usuario_sistema()->where('gl_password_usuario_sistema',$pass)->first()){
+        if($usuario->usuarioSistema()->where('gl_password_usuario_sistema',$pass)->first()){
             $json['estado'] = true;
             $json['redirect'] = 'Home/index';
 
-            $perfil = \App\Perfiles::find($usuario->usuario_sistema->cd_perfil_fk_usuario_sistema);
+            $perfil = \App\Perfiles::find($usuario->usuarioSistema->cd_perfil_fk_usuario_sistema);
 
             $funciones = $perfil->funciones;
 
 
-            $request->session()->put('id', $usuario->usuario_sistema->id_usuario_sistema);
+            $request->session()->put('id', $usuario->usuarioSistema->id_usuario_sistema);
             $request->session()->put('nombre', $usuario->gl_nombres_usuario);
             $request->session()->put('apellido_paterno', $usuario->gl_apellido_paterno_usuario);
             $request->session()->put('apellido_materno', $usuario->gl_apellido_materno_usuario);
-            $request->session()->put('email', $usuario->usuario_sistema->gl_email_usuario_sistema);
-            $request->session()->put('perfil', $usuario->usuario_sistema->cd_perfil_fk_usuario_sistema);
+            $request->session()->put('email', $usuario->usuarioSistema->gl_email_usuario_sistema);
+            $request->session()->put('perfil', $usuario->usuarioSistema->cd_perfil_fk_usuario_sistema);
             $request->session()->put('perfil_nombre', $perfil->gl_nombre_perfil);
-            $request->session()->put('ultimo_ingreso', $usuario->usuario_sistema->fc_ultimo_login_usuario_sistema);
+            $request->session()->put('ultimo_ingreso', $usuario->usuarioSistema->fc_ultimo_login_usuario_sistema);
             $request->session()->put('funciones', $funciones);
-            $request->session()->put('perfiles', $usuario->usuario_sistema->perfiles);
+            $request->session()->put('perfiles', $usuario->usuarioSistema->perfiles);
 
         }else{
             $json['estado'] = false;

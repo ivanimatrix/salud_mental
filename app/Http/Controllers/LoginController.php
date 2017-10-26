@@ -37,8 +37,7 @@ class LoginController extends Controller
 
             $funciones = $perfil->funciones;
 
-
-            $request->session()->put('id', $usuario-><->id_usuario_sistema);
+            $request->session()->put('id', $usuario->usuarioSistema->id_usuario_sistema);
             $request->session()->put('nombre', $usuario->gl_nombres_usuario);
             $request->session()->put('apellido_paterno', $usuario->gl_apellido_paterno_usuario);
             $request->session()->put('apellido_materno', $usuario->gl_apellido_materno_usuario);

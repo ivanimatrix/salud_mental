@@ -13,12 +13,13 @@ class Usuarios extends Model
 
     public $timestamps = false;
 
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function usuarioSistema(){
-        return $this->belongsTo('App\UsuariosSistema','id_usuario','id_usuario_sistema');
-        //return $this->hasOne('App\UsuariosSistema', 'id_usuario_sistema', 'id_usuario');
+        //return $this->belongsTo('App\UsuariosSistema','id_usuario','id_usuario_sistema');
+        return $this->hasOne('App\UsuariosSistema', 'id_usuario_sistema', 'id_usuario');
     }
 
 

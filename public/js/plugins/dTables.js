@@ -1,4 +1,5 @@
-document.write('<link href="' + url_base +'/public/plugins/dataTables.bootstrap.css?' + Math.random() + '" rel="stylesheets" />');
+document.write('<link href="' + url_base+ '/public/plugins/jquery.dataTables.min.css?' + Math.random() + '" type="text/css" rel="stylesheet"/>');
+//document.write('<link href="' + url_base +'/public/plugins/dataTables.bootstrap.min.css?' + Math.random() + '" rel="stylesheet" type="text/css" />');
 document.write('<link href="' + url_base+ '/public/plugins/buttons.dataTables.min.css?' + Math.random() + '" type="text/css" rel="stylesheet"/>');
 
 document.write('<script src="'+ url_base + '/public/plugins/jquery.dataTables.min.js?' + Math.random() + '" type="text/javascript"></script>');
@@ -13,6 +14,7 @@ document.write('<script src="' + url_base + '/public/plugins/jszip.min.js?' + Ma
 document.write('<script src="' + url_base + '/public/plugins/pdfmake.min.js?' + Math.random() + '" type="text/javascript"></script>');
 document.write('<script src="' + url_base + '/public/plugins/vfs_fonts.js?' + Math.random() + '" type="text/javascript"></script>');
 document.write('<script src="' + url_base + '/public/plugins/buttons.print.min.js?' + Math.random() + '" type="text/javascript"></script>');
+
 
 var Dtables = {
 
@@ -37,6 +39,7 @@ var Dtables = {
             "destroy" : true,
             "aaSorting": [],
             "deferRender": true,
+            responsive: true,
             "dom": '<"top"fl>Brt<"bottom"ip><"clear">',
             buttons: buttons,
             language:

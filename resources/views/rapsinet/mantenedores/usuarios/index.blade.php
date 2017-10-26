@@ -20,7 +20,7 @@
                 </div>
                 <div class="box-body">
 
-                        <div class="table-responsive col-xs-12" id="contenedor-grilla-usuarios">
+                        <div class="table-responsive col-xs-12 small" id="contenedor-grilla-usuarios">
 
                         </div>
 

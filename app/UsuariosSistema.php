@@ -13,6 +13,7 @@ class UsuariosSistema extends Model
 
     public $timestamps = false;
 
+
     /**
      * Obtener datos de usuario sistema
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

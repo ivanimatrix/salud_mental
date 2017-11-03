@@ -17,7 +17,7 @@ class Usuarios extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function usuarioSistema(){
-        //return $this->belongsTo('App\UsuariosSistema','id_usuario','id_usuario_sistema');
+        //return $this->belongsTo('App\UsuariosSistema','id_usuario_sistema','id_usuario');
         return $this->hasOne('App\UsuariosSistema', 'id_usuario_sistema', 'id_usuario');
     }
 

@@ -15,8 +15,12 @@ class MantenedorUsuarios extends Controller
 
     public function grillaUsuarios(){
 
-        $usuarios = UsuariosSistema::with('usuario')->get();
+        $usuarios = UsuariosSistema::get();
 
+        foreach($usuarios as $user){
+            echo($user->usuario->gl_rut_usuario);
+        }
+        die;
         return view('rapsinet.mantenedores.usuarios.grilla', ['usuarios' => $usuarios]);
 
     }

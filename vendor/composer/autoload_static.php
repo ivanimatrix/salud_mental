@@ -14,7 +14,6 @@ class ComposerStaticInitbea15376e25a4a3ca771dfd1d6f5db58
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
-        'a1944ad99b2c9dde1f8975eab6b29a40' => __DIR__ . '/..' . '/acacha/helpers/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -105,10 +104,6 @@ class ComposerStaticInitbea15376e25a4a3ca771dfd1d6f5db58
         'A' => 
         array (
             'App\\' => 4,
-            'Acacha\\User\\' => 12,
-            'Acacha\\Helpers\\' => 15,
-            'Acacha\\Filesystem\\' => 18,
-            'Acacha\\AdminLTETemplateLaravel\\' => 31,
         ),
     );
 
@@ -287,22 +282,7 @@ class ComposerStaticInitbea15376e25a4a3ca771dfd1d6f5db58
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
-        'Acacha\\User\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/acacha/user/src',
-        ),
-        'Acacha\\Helpers\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/acacha/helpers/src',
-        ),
-        'Acacha\\Filesystem\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/acacha/filesystem/src',
-        ),
-        'Acacha\\AdminLTETemplateLaravel\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/acacha/admin-lte-template-laravel/src',
-        ),
+
     );
 
     public static $prefixesPsr0 = array (

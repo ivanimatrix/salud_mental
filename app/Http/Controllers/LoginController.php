@@ -37,7 +37,6 @@ class LoginController extends Controller
 
             $funciones = $perfil->funciones;
 
-
             $request->session()->put('id', $usuario->usuarioSistema->id_usuario_sistema);
             $request->session()->put('nombre', $usuario->gl_nombres_usuario);
             $request->session()->put('apellido_paterno', $usuario->gl_apellido_paterno_usuario);
@@ -55,7 +54,6 @@ class LoginController extends Controller
         }
 
         return response()->json($json);
-        //return redirect(url('Home/index'));
     }
 
 

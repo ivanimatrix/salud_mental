@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.auth')
+@extends('layouts.auth')
 
 @section('htmlheader_title')
     Log in
@@ -38,7 +38,7 @@
 
         </div>
     </div>
-    @include('adminlte::layouts.partials.scripts_auth')
+    @include('layouts.partials.scripts_auth')
     </body>
 
 @endsection

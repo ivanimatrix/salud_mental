@@ -19,3 +19,7 @@
 .modal-wide .modal-body {
   	overflow-y: auto;
 }
+
+table.table > thead > tr > th{
+    text-align: center !important;
+}

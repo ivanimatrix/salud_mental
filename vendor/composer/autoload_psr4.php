@@ -49,8 +49,4 @@ return array(
     'Creativeorange\\Gravatar\\' => array($vendorDir . '/creativeorange/gravatar/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'App\\' => array($baseDir . '/app'),
-    'Acacha\\User\\' => array($vendorDir . '/acacha/user/src'),
-    'Acacha\\Helpers\\' => array($vendorDir . '/acacha/helpers/src'),
-    'Acacha\\Filesystem\\' => array($vendorDir . '/acacha/filesystem/src'),
-    'Acacha\\AdminLTETemplateLaravel\\' => array($vendorDir . '/acacha/admin-lte-template-laravel/src'),
 );

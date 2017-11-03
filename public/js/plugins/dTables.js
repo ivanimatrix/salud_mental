@@ -1,35 +1,42 @@
-document.write('<link href="' + url_base+ '/public/plugins/jquery.dataTables.min.css?' + Math.random() + '" type="text/css" rel="stylesheet"/>');
+document.write('<link href="' + url_base+ '/public/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css?' + Math.random() + '" type="text/css" rel="stylesheet"/>');
 //document.write('<link href="' + url_base +'/public/plugins/dataTables.bootstrap.min.css?' + Math.random() + '" rel="stylesheet" type="text/css" />');
-document.write('<link href="' + url_base+ '/public/plugins/buttons.dataTables.min.css?' + Math.random() + '" type="text/css" rel="stylesheet"/>');
+//document.write('<link href="' + url_base+ '/public/adminlte/bower_components/datatables.net/js/buttons.dataTables.min.css?' + Math.random() + '" type="text/css" rel="stylesheet"/>');
 
-document.write('<script src="'+ url_base + '/public/plugins/jquery.dataTables.min.js?' + Math.random() + '" type="text/javascript"></script>');
-document.write('<script src="'+ url_base + '/public/plugins/dataTables.bootstrap.min.js?' + Math.random() + '" type="text/javascript"></script>');
-document.write('<script src="'+ url_base + '/public/plugins/dataTables.responsive.min.js?' + Math.random() + '" type="text/javascript"></script>');
-document.write('<script src="'+ url_base + '/public/plugins/dataTables.tableTools.min.js?' + Math.random() + '" type="text/javascript"></script>');
+document.write('<script src="'+ url_base + '/public/adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js?' + Math.random() + '" type="text/javascript"></script>');
+document.write('<script src="'+ url_base + '/public/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js?' + Math.random() + '" type="text/javascript"></script>');
 
-
-document.write('<script src="' + url_base + '/public/plugins/dataTables.buttons.min.js?' + Math.random() + '" type="text/javascript"></script>');
-document.write('<script src="' + url_base + '/public/plugins/buttons.html5.min.js?' + Math.random() + '" type="text/javascript"></script>');
-document.write('<script src="' + url_base + '/public/plugins/jszip.min.js?' + Math.random() + '" type="text/javascript"></script>');
-document.write('<script src="' + url_base + '/public/plugins/pdfmake.min.js?' + Math.random() + '" type="text/javascript"></script>');
-document.write('<script src="' + url_base + '/public/plugins/vfs_fonts.js?' + Math.random() + '" type="text/javascript"></script>');
-document.write('<script src="' + url_base + '/public/plugins/buttons.print.min.js?' + Math.random() + '" type="text/javascript"></script>');
+document.write('<script src="' + url_base + '/public/adminlte/bower_components/datatables.net/js/dataTables.buttons.min.js?' + Math.random() + '" type="text/javascript"></script>');
+document.write('<script src="' + url_base + '/public/adminlte/bower_components/datatables.net/js/buttons.html5.min.js?' + Math.random() + '" type="text/javascript"></script>');
+document.write('<script src="' + url_base + '/public/adminlte/bower_components/datatables.net/js/jszip.min.js?' + Math.random() + '" type="text/javascript"></script>');
+document.write('<script src="' + url_base + '/public/adminlte/bower_components/datatables.net/js/pdfmake.min.js?' + Math.random() + '" type="text/javascript"></script>');
+document.write('<script src="' + url_base + '/public/adminlte/bower_components/datatables.net/js/vfs_fonts.js?' + Math.random() + '" type="text/javascript"></script>');
+document.write('<script src="' + url_base + '/public/adminlte/bower_components/datatables.net/js/buttons.print.min.js?' + Math.random() + '" type="text/javascript"></script>');
 
 
 var Dtables = {
 
     initTable : function(tabla, options){
 
-        if($("#"+tabla).parent().attr('data-row')) {
-            var filas = parseInt($(this).parent().attr("data-row"));
+        if($("#"+tabla).data('rows')) {
+            var filas = parseInt($("#"+tabla).data('rows'));
         } else {
             var filas = 10;
         }
 
+        var filename = 'listado.xlsx';
+        if($("#"+tabla).data('name')){
+        	filename = $("#"+tabla).data('name');
+		}
+
         var buttons = [];
         if($("#"+tabla).data("export")){
             buttons = [
-                'excelHtml5'
+				{
+					extend: 'excelHtml5',
+					text: '<i class="fa fa-file-excel-o"></i> Exportar a Excel',
+					className : 'btn btn-sm bg-olive btn-flat',
+					filename : filename
+				}
             ];
         }
 

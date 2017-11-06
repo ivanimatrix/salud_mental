@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('layouts.app')
 
 @section('htmlheader_title')
     Usuario :: Mi cuenta
@@ -49,19 +49,19 @@
                         <div class="form-group">
                             <label class="col-xs-12 col-sm-6 col-md-4 control-label">Email</label>
                             <div class="col-xs-12 col-sm-6 col-md-8">
-                                <input type="text" value="{{ $usuario->usuario_sistema->gl_email_usuario_sistema }}" class="form-control" name="email_usuario" id="email_usuario" />
+                                <input type="text" value="{{ $usuario->usuarioSistema->gl_email_usuario_sistema }}" class="form-control" name="email_usuario" id="email_usuario" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-12 col-sm-6 col-md-4 control-label">Teléfono</label>
                             <div class="col-xs-12 col-sm-6 col-md-8">
-                                <input type="text" value="{{ $usuario->usuario_sistema->gl_fono_usuario_sistema }}" class="form-control" name="telefono_usuario" id="telefono_usuario" />
+                                <input type="text" value="{{ $usuario->usuarioSistema->gl_fono_usuario_sistema }}" class="form-control" name="telefono_usuario" id="telefono_usuario" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-12 col-sm-6 col-md-4 control-label">Celular</label>
                             <div class="col-xs-12 col-sm-6 col-md-8">
-                                <input type="text" value="{{ $usuario->usuario_sistema->gl_celular_usuario_sistema }}" class="form-control" name="celular_usuario" id="celular_usuario" />
+                                <input type="text" value="{{ $usuario->usuarioSistema->gl_celular_usuario_sistema }}" class="form-control" name="celular_usuario" id="celular_usuario" />
                             </div>
                         </div>
 
@@ -119,14 +119,14 @@
                         <tr>
                             <td class="text-center">Región</td>
                             <td class="text-left">
-                                <label class="label label-primary">{{ $usuario->usuario_sistema->region->gl_nombre_region }}</label>
+                                <label class="label label-primary">{{ $usuario->usuarioSistema->region->gl_nombre_region }}</label>
                             </td>
                         </tr>
                         <tr>
                             <td class="text-center">Perfiles</td>
                             <td class="text-left">
-                                @if ($usuario->usuario_sistema->perfiles)
-                                    @foreach($usuario->usuario_sistema->perfiles as $perfil)
+                                @if ($usuario->usuarioSistema->perfiles)
+                                    @foreach($usuario->usuarioSistema->perfiles as $perfil)
                                         <label class="label label-primary">{{ mb_strtoupper($perfil->gl_nombre_perfil) }}</label>
                                     @endforeach
                                 @endif
@@ -135,8 +135,8 @@
                         <tr>
                             <td class="text-center">Establecimientos</td>
                             <td class="text-left">
-                                @if ($usuario->usuario_sistema->establecimientos)
-                                    @foreach($usuario->usuario_sistema->establecimientos as $establecimiento)
+                                @if ($usuario->usuarioSistema->establecimientos)
+                                    @foreach($usuario->usuarioSistema->establecimientos as $establecimiento)
                                         <label class="label label-primary">{{ mb_strtoupper($establecimiento->gl_nombre_establecimiento) }} (comuna de {{ $establecimiento->comuna->gl_nombre_comuna }})</label><br/>
                                     @endforeach
                                 @endif

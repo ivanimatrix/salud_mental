@@ -16,11 +16,14 @@
         <div class="col-xs-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <div class="box-title">Listado de Usuarios</div>
+                    {{--<div class="box-title">Listado de Usuarios</div>--}}
+                    <a class="btn btn-app btn-flat btn-primary pull-right" style="margin:0" href="javascript:void(0);" onclick="Usuarios.formUsuario();">
+                        <i class="fa fa-user"></i> Nuevo Usuario
+                    </a>
                 </div>
                 <div class="box-body">
 
-                        <div class="table-responsive col-xs-12 small" id="contenedor-grilla-usuarios">
+                        <div class="table-responsive" id="contenedor-grilla-usuarios">
 
                         </div>
 

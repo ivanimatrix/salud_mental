@@ -13,6 +13,16 @@ var Usuarios = {
 				Dtables.initTable('grilla-usuarios');
 			}
 		});
+	},
+
+
+	formUsuario : function(usuario){
+		var id = usuario;
+		if(id === undefined){
+			id = 0;
+		}
+
+		BootModal.open(url_base + '/MantenedorUsuarios/formUsuario/'+id,'Formulario de usuario');
 	}
 
 

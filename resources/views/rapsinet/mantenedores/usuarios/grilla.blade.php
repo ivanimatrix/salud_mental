@@ -27,11 +27,18 @@
                 @endforeach
             </td>
             <td class="text-center">
-                <span class="btn-group">
-                    <button class="btn btn-flat btn-success"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-flat btn-info"><i class="fa fa-user"></i></button>
-                    <button class="btn btn-flat btn-danger"><i class="fa fa-remove"></i></button>
-                </span>
+                <div class="dropdown">
+                    <button class="btn btn-flat dropdown-toggle btn-sm bg-olive" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        <i class="fa fa-gears"></i> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" class="dropdown-header">Acciones</li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" onclick="BootModal.open(url_base + '/MantenedorUsuarios/formUsuario/{{ $user->id_usuario_sistema }}','Formulario para {{ $user->usuario['gl_nombres_usuario'] }} {{ $user->usuario['gl_apellido_paterno_usuario'] }}');"><i class="fa fa-edit"></i> Editar</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-user"></i> Cargar</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-lock"></i> Nueva clave</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-remove"></i> Eliminar</a></li>
+                    </ul>
+                </div>
             </td>
         </tr>
         @endforeach

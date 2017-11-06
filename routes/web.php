@@ -32,3 +32,7 @@ Route::post('/Usuario/cambiarPerfil', 'UsuarioController@cambiarPerfilUsuario');
 /** rutas mantenedores */
 Route::get('/MantenedorUsuarios/index', 'MantenedorUsuarios@index');
 Route::get('/MantenedorUsuarios/listado', 'MantenedorUsuarios@grillaUsuarios');
+Route::get('/MantenedorUsuarios/formUsuario/{id}', 'MantenedorUsuarios@formUsuarios');
+
+/** rutas busquedas */
+Route::get('/Busquedas/buscarSolicitudes', 'Busquedas@buscarSolicitudes');

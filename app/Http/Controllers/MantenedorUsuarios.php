@@ -17,12 +17,35 @@ class MantenedorUsuarios extends Controller
 
         $usuarios = UsuariosSistema::get();
 
-        foreach($usuarios as $user){
-            echo($user->usuario->gl_rut_usuario);
-        }
-        die;
         return view('rapsinet.mantenedores.usuarios.grilla', ['usuarios' => $usuarios]);
 
+    }
+
+
+    public function formUsuarios($id){
+
+        $regiones = \App\Regiones::all();
+        $perfiles = \App\Perfiles::all();
+
+        $usuario = null;
+        $perfiles_usuario = [];
+
+        if($id > 0){
+            $usuario = \App\Usuarios::find($id);
+            foreach($usuario->usuarioSistema->perfiles as $perfil){
+                $perfiles_usuario[] = $perfil->id_perfil;
+            }
+        }
+
+        return view(
+            'rapsinet.mantenedores.usuarios.form',
+            [
+                'regiones' => $regiones,
+                'perfiles' => $perfiles,
+                'usuario' => $usuario,
+                'perfiles_usuario' => $perfiles_usuario
+            ]
+        );
     }
 
 }
